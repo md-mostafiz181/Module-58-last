@@ -16,6 +16,9 @@ import Friends from './components/Friends/Friends.jsx';
 import FriendDetail from './components/FriendDetail/FriendDetail.jsx';
 import Posts from './components/Posts/Posts.jsx';
 import PostDetails from './components/PostDetails/PostDetails.jsx';
+import Error from './components/Error/Error.jsx';
+import Photos from './components/Photos/Photos.jsx';
+import PhotosDetails from './components/PhotosDetails/PhotosDetails.jsx';
 
 // const router = createBrowserRouter([
 //   {
@@ -73,6 +76,23 @@ const router=createBrowserRouter([
         element:<PostDetails></PostDetails>,
         loader:({params})=>fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`)
 
+      },
+      {
+        path:"photos",
+        element:<Photos></Photos>,
+        loader:()=>fetch('https://jsonplaceholder.typicode.com/photos'),
+
+      },
+      {
+        path:"photos/:photosId",
+        element:<PhotosDetails></PhotosDetails>,
+        loader:({params})=> fetch(`https://jsonplaceholder.typicode.com/photos/${params.photosId}`)
+
+
+      },
+      {
+        path: "*",
+        element: <Error></Error>
       }
     ]
   }
