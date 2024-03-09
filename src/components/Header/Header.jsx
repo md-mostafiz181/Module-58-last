@@ -12,6 +12,7 @@ const Header = () => {
             <ActiveLink to="about">About</ActiveLink>
             <ActiveLink to="posts">Posts</ActiveLink>
             <ActiveLink to="photos">Photos</ActiveLink>
+            <ActiveLink to="todos">Todos</ActiveLink>
             
         </nav>
     );

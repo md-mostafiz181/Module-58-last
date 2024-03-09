@@ -19,6 +19,8 @@ import PostDetails from './components/PostDetails/PostDetails.jsx';
 import Error from './components/Error/Error.jsx';
 import Photos from './components/Photos/Photos.jsx';
 import PhotosDetails from './components/PhotosDetails/PhotosDetails.jsx';
+import Todos from './components/Todos/Todos.jsx';
+import TodosDetails from './components/TodosDetails/TodosDetails.jsx';
 
 // const router = createBrowserRouter([
 //   {
@@ -88,6 +90,18 @@ const router=createBrowserRouter([
         element:<PhotosDetails></PhotosDetails>,
         loader:({params})=> fetch(`https://jsonplaceholder.typicode.com/photos/${params.photosId}`)
 
+
+      },
+      {
+        path:"todos",
+        element:<Todos></Todos>,
+        loader:()=>fetch('https://jsonplaceholder.typicode.com/todos'),
+
+      },
+      {
+        path:"todos/:todosId",
+        element: <TodosDetails></TodosDetails>,
+        loader:({params})=>fetch(`https://jsonplaceholder.typicode.com/todos/${params.todosId}`)
 
       },
       {

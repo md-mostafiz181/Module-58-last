@@ -5,7 +5,7 @@ import Photo from '../Photo/Photo';
 
 const Photos = () => {
     const photos=useLoaderData();
-    console.log(photos)
+    // console.log(photos)
     return (
         <div>
             <h1>Here shows all photos: {photos.length}</h1>
